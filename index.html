@@ -1,0 +1,778 @@
+<!doctype html>
+
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Curry Fusion &amp; Grill — Menu</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&amp;family=Jost:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <div class="hero-shell">
+        <!-- New Hero Top Bar -->
+        <div class="hero-top-bar">
+          <div class="hero-top-bar-logo">
+            <a href="#top">
+              <img
+                src="images/special/logoo.png"
+                alt="Curry Fusion & Grill Logo"
+              />
+            </a>
+          </div>
+          <div class="hero-top-bar-lang">
+            <button
+              class="lang-btn active"
+              type="button"
+              data-lang="it"
+              aria-pressed="true"
+            >
+              <span class="lang-flag">IT</span>
+              Italiano
+            </button>
+            <button
+              class="lang-btn"
+              type="button"
+              data-lang="en"
+              aria-pressed="false"
+            >
+              <span class="lang-flag">GB</span>
+              English
+            </button>
+          </div>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="script">Curry Fusion</span>
+            <h1>&amp; Grill</h1>
+            <div class="subtitle">
+              Ristorante Asiatico · Sapori Autentici del Pakistan
+            </div>
+            <p class="tag">
+              Un viaggio tra spezie, tandoor e tradizione. Ogni piatto racconta
+              una storia, ogni boccone un ricordo.
+            </p>
+            <a class="cta-btn" href="#catnav">Esplora il Menù →</a>
+            <br />
+            <br />
+            <span class="badge-halal">
+              <svg viewbox="0 0 24 24">
+                <path
+                  d="M12 2c-4 4-6 8-6 11a6 6 0 0 0 12 0c0-3-2-7-6-11z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                ></path>
+              </svg>
+              Halal
+            </span>
+          </div>
+          <a href="#top" class="hero-visual">
+            <div class="hero-image-layer layer-1"></div>
+            <div class="hero-image-layer layer-2"></div>
+            <div class="hero-image-frame">
+              <img src="images/newbann.png" alt="Sajji Chicken" />
+              <span class="image-glow"></span>
+            </div>
+            <div class="hero-accent-card"></div>
+            <!-- <div class="hero-badge">
+              <span>✓</span><b>100% Halal</b><small>Sapori autentici</small>
+            </div> -->
+          </a>
+        </div>
+        <div class="hero-features" aria-label="Restaurant features">
+          <span
+            ><i
+              ><svg viewbox="0 0 24 24">
+                <path
+                  d="M12 21c-4-3-7-7-7-11a7 7 0 0 1 14 0c0 4-3 8-7 11z"
+                ></path>
+                <path d="M12 6v10"></path></svg></i
+            ><b>Ingredienti freschi</b></span
+          >
+          <span
+            ><i
+              ><svg viewbox="0 0 24 24">
+                <path
+                  d="M12 21s-7-4.5-7-11V5l7-3 7 3v5c0 6.5-7 11-7 11z"
+                ></path>
+                <path d="m8 12 2.5 2.5L16 9"></path></svg></i
+            ><b>100% Halal</b></span
+          >
+          <span
+            ><i
+              ><svg viewbox="0 0 24 24">
+                <circle cx="12" cy="8" r="3"></circle>
+                <path d="M5 20c0-4 2.5-6 7-6s7 2 7 6"></path></svg></i
+            ><b>Per tutta la famiglia</b></span
+          >
+          <span
+            ><i
+              ><svg viewbox="0 0 24 24">
+                <path
+                  d="M4 19h16M6 19V9h12v10M9 9V5h6v4M8 13h8M8 16h8"
+                ></path></svg></i
+            ><b>Ricette tradizionali</b></span
+          >
+        </div>
+      </div>
+    </header>
+    <!-- Sticky Navbar — id="catnav" is used by the CTA button href="#catnav" to anchor here (category navigation bar) -->
+    <nav class="sticky-navbar" id="catnav">
+      <div class="navbar-container">
+        <!-- Left: Logo & Text -->
+        <a
+          class="navbar-logo"
+          href="#top"
+          aria-label="Curry Fusion &amp; Grill"
+        >
+          <span class="navbar-text"> </span>
+        </a>
+
+        <!-- Center: Navigation Links -->
+        <div
+          class="navbar-links"
+          id="navbar-links"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="menu-title"
+        >
+          <span id="menu-title" class="sr-only">Navigation menu</span>
+          <a href="#recently-added">Recently Added</a>
+          <a href="#specialita">Specialità</a>
+          <a href="#antipasti">Antipasti</a>
+          <a href="#streetfood">Street Food</a>
+          <a href="#riso">Riso &amp; Biryani</a>
+          <a href="#curry">Il Curry</a>
+          <a href="#veggies">Veggies</a>
+          <a href="#bbq">BBQ &amp; Tandoor</a>
+          <a href="#accompagnamento">Accompagnamento</a>
+          <a href="#bevande">Bevande</a>
+          <a href="#dolci">Dolci</a>
+          <a href="#allergeni">Allergeni</a>
+        </div>
+
+        <!-- Right: Navigation Button (if needed) -->
+        <div class="navbar-right">
+          <!-- <a class="navbar-btn" href="#catnav">Prenota un tavolo</a> -->
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile menu overlay -->
+    <div class="navbar-overlay" id="navbar-overlay"></div>
+    <main>
+      <section id="recently-added">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.recentlyAdded.eyebrow"
+            >Recently Added</span
+          >
+          <h2 data-i18n="sec.recentlyAdded.title">
+            Le nuove aggiunte più amate
+          </h2>
+        </div>
+        <div class="text-menu text-menu-recently-added"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="specialita">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.specialita.eyebrow"
+            >Specialità</span
+          >
+          <h2 data-i18n="sec.specialita.title">
+            Le dichiarazioni d'amore speziate
+          </h2>
+        </div>
+        <div class="grid" data-section="specialita"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="antipasti">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.antipasti.eyebrow"
+            >Antipasti</span
+          >
+          <h2 data-i18n="sec.antipasti.title">Fritture</h2>
+          <p class="sub" data-i18n="sec.antipasti.sub">
+            Il trailer perfetto per il film che sta per iniziare
+          </p>
+        </div>
+        <div class="grid" data-section="antipasti"></div>
+      </section>
+      <section id="streetfood">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.streetfood.eyebrow"
+            >Street Food</span
+          >
+          <h2 data-i18n="sec.streetfood.title">
+            Lasciatevi viziare dai sapori della strada
+          </h2>
+        </div>
+        <div class="grid" data-section="streetfood"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="riso">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.riso.eyebrow"
+            >Il Riso Basmati</span
+          >
+          <h2 data-i18n="sec.riso.title">Biryani — la "regina di fragranza"</h2>
+          <p class="sec-note" data-i18n="sec.riso.note">
+            Il Biryani è il piatto di riso più amato dell'Asia. Un capolavoro di
+            stratificazione dove riso aromatico, carne marinata e spezie si
+            fondono in una sinfonia di sapori.
+          </p>
+        </div>
+        <div class="grid" data-section="biryani"></div>
+        <div class="sec-head" style="margin-top: 46px">
+          <h2 style="font-size: 1.35rem" data-i18n="sec.riso.variants">
+            Varianti Strong & Delicate
+          </h2>
+        </div>
+        <div class="grid" data-section="riso-varianti"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="curry">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.curry.eyebrow">Il Curry</span>
+          <h2 data-i18n="sec.curry.title">Crea il tuo curry perfetto</h2>
+          <p class="sec-note" data-i18n="sec.curry.note">
+            Scegli prima la salsa che preferisci, poi aggiungi la proteina che
+            desideri. Un'esperienza personalizzata per ogni palato.
+          </p>
+        </div>
+        <div class="list-wrap">
+          <div class="list-panel">
+            <h3>
+              <span class="num">1</span>
+              <span data-i18n="sec.curry.sauce">Scegli la Salsa</span>
+            </h3>
+            <div class="list-row">
+              <div class="name">
+                Kadhai<span class="d" data-i18n="sec.curry.kadhai"
+                  >salsa pomodoro e spezie</span
+                >
+              </div>
+            </div>
+            <div class="list-row">
+              <div class="name">
+                Korma<span class="d" data-i18n="sec.curry.korma"
+                  >salsa pomodoro, panna e cocco</span
+                >
+              </div>
+            </div>
+            <div class="list-row">
+              <div class="name">
+                White Korma<span class="d" data-i18n="sec.curry.whiteKorma"
+                  >salsa alla panna, pepe e cocco</span
+                >
+              </div>
+            </div>
+            <div class="list-row">
+              <div class="name">
+                Jalfarezi<span class="d" data-i18n="sec.curry.jalfarezi"
+                  >salsa pomodoro e verdure</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="list-panel">
+            <h3>
+              <span class="num">2</span>
+              <span data-i18n="sec.curry.protein">Scegli la Proteina</span>
+            </h3>
+            <div class="list-row">
+              <div class="name" data-i18n="sec.curry.pollo">Pollo</div>
+              <div class="leader"></div>
+              <div class="amt">€9,90</div>
+            </div>
+            <div class="list-row">
+              <div class="name" data-i18n="sec.curry.polloBocconcini">
+                Pollo Bocconcini
+              </div>
+              <div class="leader"></div>
+              <div class="amt">€11,00</div>
+            </div>
+            <div class="list-row">
+              <div class="name" data-i18n="sec.curry.agnello">Agnello</div>
+              <div class="leader"></div>
+              <div class="amt">€12,90</div>
+            </div>
+            <div class="list-row">
+              <div class="name" data-i18n="sec.curry.verdure">Verdure</div>
+              <div class="leader"></div>
+              <div class="amt">€8,90</div>
+            </div>
+            <div class="list-row">
+              <div class="name" data-i18n="sec.curry.gamberetti">
+                Gamberetti
+              </div>
+              <div class="leader"></div>
+              <div class="amt">€13,90</div>
+            </div>
+            <div class="list-row">
+              <div class="name" data-i18n="sec.curry.paneer">Paneer</div>
+              <div class="leader"></div>
+              <div class="amt">€9,90</div>
+            </div>
+          </div>
+        </div>
+        <div class="couplet" data-i18n="sec.curry.couplet">
+          Se ogni goccia di sapore vuoi catturare, il Naan come cucchiaio
+          d'autore devi usare!<br />
+          Se il gusto vuoi acchiappare, il curry con il riso devi accompagnare!
+        </div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="veggies">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.veggies.eyebrow">Veggies</span>
+          <h2 data-i18n="sec.veggies.title">Vietato l'ingresso alla carne!</h2>
+          <p class="sec-note" data-i18n="sec.veggies.note">
+            Solo magia vegetariana. Ogni piatto è una celebrazione delle
+            verdure, delle spezie e dei sapori autentici del Pakistan.
+          </p>
+        </div>
+        <div class="grid" data-section="veggies"></div>
+        <div class="notebox" data-i18n="sec.veggies.notebox">
+          Spoiler: finirai per fare la scarpetta con il Naan! ✨
+        </div>
+        <div class="text-menu text-menu-veggies"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="bbq">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.bbq.eyebrow">BBQ & Tandoor</span>
+          <h2 data-i18n="sec.bbq.title">
+            Così buoni che il barbecue della domenica sembra un lontano ricordo
+          </h2>
+          <p class="sec-note" data-i18n="sec.bbq.note">
+            Il Tandoor è un forno tradizionale in argilla che dona un sapore
+            affumicato e una consistenza inconfondibile, croccante fuori e
+            succosa dentro.
+          </p>
+        </div>
+        <div class="grid" data-section="bbq"></div>
+        <div class="text-menu text-menu-bbq"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="accompagnamento">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.accompagnamento.eyebrow"
+            >Accompagnamento</span
+          >
+          <h2 data-i18n="sec.accompagnamento.title">
+            "Ogni re ha bisogno della sua corte"
+          </h2>
+          <p class="sec-note" data-i18n="sec.accompagnamento.note">
+            I nostri Naan sono cotti nel tandoor, soffici e profumati, perfetti
+            per raccogliere ogni ingrediente segreto del curry.
+          </p>
+        </div>
+        <div class="grid" data-section="accompagnamento"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="bevande">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.bevande.eyebrow"
+            >Sorseggi Freddi e Caldi</span
+          >
+          <h2 data-i18n="sec.bevande.title">
+            I vigili del fuoco del tuo palato
+          </h2>
+        </div>
+        <div class="grid" data-section="bevande"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="dolci">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.dolci.eyebrow"
+            >Sweet Endings</span
+          >
+          <h2 data-i18n="sec.dolci.title">
+            Ogni grande storia merita un lieto fine
+          </h2>
+          <p class="sec-note" data-i18n="sec.dolci.note">
+            Dolci delicatamente profumati con cardamomo, zafferano e acqua di
+            rose, rappresentano la conclusione perfetta di un viaggio
+            indimenticabile.
+          </p>
+        </div>
+        <div class="grid" data-section="dolci"></div>
+      </section>
+      <div class="rule">
+        <svg fill="none" viewbox="0 0 24 24">
+          <path
+            d="M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"
+            stroke-width="1.3"
+          ></path>
+        </svg>
+      </div>
+      <section id="allergeni">
+        <div class="sec-head">
+          <span class="eyebrow" data-i18n="sec.allergeni.eyebrow"
+            >Allergeni</span
+          >
+          <h2 data-i18n="sec.allergeni.title">
+            Informazioni sugli Allergeni Alimentari
+          </h2>
+          <p class="sec-note" data-i18n="sec.allergeni.note">
+            In conformità con il Regolamento UE 1169/2011, di seguito è
+            riportata la lista dei 14 allergeni principali che potrebbero essere
+            presenti nei nostri piatti. Per qualsiasi dubbio o esigenza
+            specifica, si prega di informare il nostro personale.
+          </p>
+        </div>
+        <ul class="allergen-list">
+          <li>
+            <b data-i18n="sec.allergeni.cereals">Cereali contenenti glutine</b>
+            (<span data-i18n="sec.allergeni.cerealsList"
+              >grano, segale, orzo, avena, farro, kamut o i loro ceppi
+              ibridati</span
+            >) e prodotti derivati.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.crustaceans">Crostacei</b> e prodotti a
+            base di crostacei.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.eggs">Uova</b> e prodotti a base di
+            uova.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.fish">Pesce</b> e prodotti a base di
+            pesce.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.peanuts">Arachidi</b> e prodotti a base
+            di arachidi.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.soy">Soia</b> e prodotti a base di soia.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.milk">Latte</b> e prodotti a base di
+            latte (<span data-i18n="sec.allergeni.milkInc"
+              >incluso lattosio</span
+            >).
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.nuts">Frutta a guscio</b> (<span
+              data-i18n="sec.allergeni.nutsList"
+              >mandorle, nocciole, noci, anacardi, pistacchi e altre</span
+            >) e prodotti derivati.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.celery">Sedano</b> e prodotti a base di
+            sedano.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.mustard">Senape</b> e prodotti a base di
+            senape.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.sesame">Semi di sesamo</b> e prodotti a
+            base di semi di sesamo.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.sulphites"
+              >Anidride solforosa e solfiti</b
+            >
+            oltre 10 mg/kg o 10 mg/l in SO2 totale.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.lupin">Lupini</b> e prodotti a base di
+            lupini.
+          </li>
+          <li>
+            <b data-i18n="sec.allergeni.molluscs">Molluschi</b> e prodotti a
+            base di molluschi.
+          </li>
+        </ul>
+        <div class="notebox" data-i18n="sec.allergeni.notebox">
+          La vostra sicurezza e soddisfazione sono la nostra priorità. Non
+          esitate a chiedere chiarimenti!
+        </div>
+      </section>
+    </main>
+    <footer>
+      <h3 data-i18n="footer.title">
+        Grazie per aver scelto Curry Fusion &amp; Grill
+      </h3>
+      <p data-i18n="footer.text">
+        Ci auguriamo che questo viaggio attraverso i sapori autentici del
+        Pakistan vi abbia conquistato!
+      </p>
+      <div class="contact">
+        <span
+          ><svg fill="none" stroke-width="1.4" viewbox="0 0 24 24">
+            <path
+              d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"
+            ></path>
+            <circle cx="12" cy="9.5" r="2.4"></circle>
+          </svg>
+          Via Esempio 123, Città</span
+        >
+        <span
+          ><svg fill="none" stroke-width="1.4" viewbox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path
+              d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"
+            ></path>
+          </svg>
+          www.curryfusiongrill.it</span
+        >
+      </div>
+      <div class="handles">@curryfusionandgrill · TikTok · Instagram</div>
+    </footer>
+    <!-- ============ ICON LIBRARY (inline linework, used as photo fallback) ============ -->
+    <svg height="0" style="position: absolute" width="0">
+      <defs>
+        <symbol id="ic-leaf" viewbox="0 0 24 24">
+          <path d="M4 20c8 0 16-6 16-16-10 0-16 8-16 16z"></path>
+          <path d="M4 20c2-6 6-10 12-13"></path>
+        </symbol>
+        <symbol id="ic-drumstick" viewbox="0 0 24 24">
+          <path
+            d="M14 3c3 0 6 3 5 7-1 3-4 4-6 6-1 1-1 3-3 4-1.5 1.5-4 .5-4-1.5 0-1.5 1.5-2 2.5-3 2-2 3-4 3-5.5C11.5 8 12 4 14 3z"
+          ></path>
+          <circle cx="6.5" cy="17.5" r="1.4"></circle>
+        </symbol>
+        <symbol id="ic-nomeat" viewbox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+          <line x1="5.5" x2="18.5" y1="5.5" y2="18.5"></line>
+        </symbol>
+        <symbol id="ic-cube" viewbox="0 0 24 24">
+          <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"></path>
+          <path d="M4 7.5L12 12l8-4.5M12 12v9"></path>
+        </symbol>
+        <symbol id="ic-muscle" viewbox="0 0 24 24">
+          <path
+            d="M4 14c0-4 2-8 5-9 1 2-1 3-1 5 3-3 6-2 7 0 1-3 4-3 5 0 1 3-1 6-4 8-3 2-8 3-12-4z"
+          ></path>
+        </symbol>
+        <symbol id="ic-ricebowl" viewbox="0 0 24 24">
+          <path d="M3 11h18c0 5-4 9-9 9s-9-4-9-9z"></path>
+          <path d="M8 11c0-3 1.5-5 4-6M12 5c2.5 1 4 3 4 6"></path>
+        </symbol>
+        <symbol id="ic-samosa" viewbox="0 0 24 24">
+          <path d="M4 19h16L12 4z"></path>
+          <path d="M8 19l4-11 4 11"></path>
+        </symbol>
+        <symbol id="ic-fritter" viewbox="0 0 24 24">
+          <ellipse cx="12" cy="15" rx="8" ry="4"></ellipse>
+          <path d="M6 15c0-3 2-9 6-11 4 2 6 8 6 11"></path>
+        </symbol>
+        <symbol id="ic-shrimp" viewbox="0 0 24 24">
+          <path
+            d="M19 5c-6 0-11 5-11 11 3 0 5-2 5-5-3 1-5-1-5-4 3-2 7-3 11-2z"
+          ></path>
+          <circle cx="17" cy="8" r="1"></circle>
+        </symbol>
+        <symbol id="ic-fish" viewbox="0 0 24 24">
+          <path d="M3 12c4-5 10-7 15-4-2 2-2 6 0 8-5 3-11 1-15-4z"></path>
+          <circle cx="15" cy="10" r="1"></circle>
+          <path d="M18 8l3-2m-3 8l3 2"></path>
+        </symbol>
+        <symbol id="ic-lentil" viewbox="0 0 24 24">
+          <path d="M3 12h18c0 5-4 9-9 9s-9-4-9-9z"></path>
+          <circle
+            cx="9"
+            cy="14"
+            fill="currentColor"
+            r=".7"
+            stroke="none"
+          ></circle>
+          <circle
+            cx="12"
+            cy="15.5"
+            fill="currentColor"
+            r=".7"
+            stroke="none"
+          ></circle>
+          <circle
+            cx="15"
+            cy="14"
+            fill="currentColor"
+            r=".7"
+            stroke="none"
+          ></circle>
+        </symbol>
+        <symbol id="ic-eggplant" viewbox="0 0 24 24">
+          <path
+            d="M14 4c1-1 3-1 3 1s-2 2-3 2M9 8c5 0 8 3 8 7 0 4-3 7-6 7s-7-3-7-7c0-3 2-5 5-7z"
+          ></path>
+        </symbol>
+        <symbol id="ic-chickpea" viewbox="0 0 24 24">
+          <circle cx="8" cy="10" r="3"></circle>
+          <circle cx="15" cy="9" r="2.4"></circle>
+          <circle cx="11" cy="15" r="2.7"></circle>
+          <circle cx="17" cy="15" r="2"></circle>
+        </symbol>
+        <symbol id="ic-skewer" viewbox="0 0 24 24">
+          <line x1="3" x2="21" y1="21" y2="3"></line>
+          <circle cx="8" cy="16" r="2.2"></circle>
+          <circle cx="12" cy="12" r="2.2"></circle>
+          <circle cx="16" cy="8" r="2.2"></circle>
+        </symbol>
+        <symbol id="ic-flame" viewbox="0 0 24 24">
+          <path
+            d="M12 2c1 4-4 5-4 10a4 4 0 0 0 8 0c0-2-1-3-2-4 1 3-2 3-2 1 0-2 2-3 0-7z"
+          ></path>
+        </symbol>
+        <symbol id="ic-naan" viewbox="0 0 24 24">
+          <ellipse cx="12" cy="12" rx="9" ry="6"></ellipse>
+          <path
+            d="M8 10c1 1 1 3 0 4M13 9c1 1.5 1 3.5 0 5M17 10c1 1 1 3 0 4"
+          ></path>
+        </symbol>
+        <symbol id="ic-roti" viewbox="0 0 24 24">
+          <circle cx="12" cy="12" r="8"></circle>
+          <circle cx="12" cy="12" r="4" stroke-dasharray="2 2"></circle>
+        </symbol>
+        <symbol id="ic-salad" viewbox="0 0 24 24">
+          <path d="M3 12h18c0 5-4 9-9 9s-9-4-9-9z"></path>
+          <path d="M7 12c0-3 2-6 5-7M12 5c3 1 5 4 5 7"></path>
+          <circle
+            cx="10"
+            cy="9"
+            fill="currentColor"
+            r=".8"
+            stroke="none"
+          ></circle>
+        </symbol>
+        <symbol id="ic-yogurt" viewbox="0 0 24 24">
+          <path d="M7 4h10l-1 5H8z"></path>
+          <path d="M6 9h12l-1.5 11h-9z"></path>
+          <path d="M9 13c1 1 1 3 0 4M15 13c-1 1-1 3 0 4"></path>
+        </symbol>
+        <symbol id="ic-bottle" viewbox="0 0 24 24">
+          <path
+            d="M10 2h4v3l2 3v13a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V8l2-3z"
+          ></path>
+          <line x1="8" x2="16" y1="12" y2="12"></line>
+        </symbol>
+        <symbol id="ic-coffee" viewbox="0 0 24 24">
+          <path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"></path>
+          <path d="M17 9h2a2.5 2.5 0 0 1 0 5h-2"></path>
+          <path d="M7 3c0 1.5 1.5 1.5 1.5 3M11 3c0 1.5 1.5 1.5 1.5 3"></path>
+        </symbol>
+        <symbol id="ic-lassi" viewbox="0 0 24 24">
+          <path d="M7 4h10l-1 16H8z"></path>
+          <path d="M6.5 8h11"></path>
+          <line x1="14" x2="14" y1="2" y2="8"></line>
+        </symbol>
+        <symbol id="ic-mango" viewbox="0 0 24 24">
+          <path d="M8 4c6 0 10 5 10 10a6 6 0 0 1-12 0c0-4 1-7-1-10z"></path>
+          <path d="M8 4c1-1 2-1.5 3-1.5"></path>
+        </symbol>
+        <symbol id="ic-tea" viewbox="0 0 24 24">
+          <path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"></path>
+          <path d="M17 10h2a2 2 0 0 1 0 4h-2"></path>
+          <path d="M7 4c1 1 0 2 1 3M11 4c1 1 0 2 1 3"></path>
+        </symbol>
+        <symbol id="ic-rosewater" viewbox="0 0 24 24">
+          <circle cx="12" cy="14" r="6"></circle>
+          <path d="M12 8V3M9 4l1.5 2M15 4l-1.5 2"></path>
+        </symbol>
+        <symbol id="ic-halwa" viewbox="0 0 24 24">
+          <path d="M4 18h16l-2-9H6z"></path>
+          <path d="M9 9c-1-2 0-4 1-5M14 9c1-2 0-4-1-5"></path>
+        </symbol>
+        <symbol id="ic-kheer" viewbox="0 0 24 24">
+          <ellipse cx="12" cy="15" rx="8" ry="5"></ellipse>
+          <path d="M6 15c1-3 3-5 6-5s5 2 6 5"></path>
+          <circle
+            cx="10"
+            cy="12"
+            fill="currentColor"
+            r=".7"
+            stroke="none"
+          ></circle>
+          <circle
+            cx="14"
+            cy="12"
+            fill="currentColor"
+            r=".7"
+            stroke="none"
+          ></circle>
+        </symbol>
+        <symbol id="ic-gulab" viewbox="0 0 24 24">
+          <circle cx="9" cy="12" r="3.4"></circle>
+          <circle cx="15" cy="9" r="2.6"></circle>
+          <circle cx="16" cy="15" r="2.6"></circle>
+          <path d="M4 19c4-2 12-2 16 0" stroke-dasharray="1.5 2"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
