@@ -1,0 +1,3011 @@
+:root {
+  --bg: #e8e3d3;
+  --bg-soft: #e6eadb;
+  --sage-light: #cfd9b9;
+  --sage-light-2: #d8e0c2;
+  --sage-dark: #4F6246;
+  --sage-dark-2: #495640;
+  --forest: #33402a;
+  --ink: #2c3624;
+  --cream: #fbfaf3;
+  --muted: #66735a;
+  --badge: #355f3b;
+  --line: #c3cba8;
+  --spice: #b25a2e;
+  --dark-card: #0b1f17;
+  --gold: #cfa74a;
+  --navbar-cream: #f8f2e7;
+  --navbar-green: #d4e1ce;
+  --navbar-orange: #df7c4b;
+}
+
+/* Prevent horizontal overflow */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure all images scale proportionally */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Body scroll lock when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Sticky Navbar Styles */
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  z-index: 1000;
+  background: #f7f1e4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.sticky-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: #d8e4d0;
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 0;
+}
+
+.navbar-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px clamp(32px, 4vw, 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--forest);
+  position: absolute;
+  left: clamp(32px, 4vw, 64px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+
+.navbar-logo-mark img {
+  display: block;
+  height: 80px;
+  border-radius: 20px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.navbar-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.navbar-text b {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navbar-text small {
+  color: #7a8677;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: #3a483c;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1.5px;
+  background: #5a7d5e;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 60%;
+}
+
+.navbar-right {
+  position: absolute;
+  right: clamp(32px, 4vw, 64px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-lang {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.78rem;
+  color: #3a483c;
+}
+
+.navbar-lang span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.navbar-lang span.active {
+  font-weight: 400;
+}
+
+.navbar-lang .flag {
+  border: 1px solid #93a58e;
+  border-radius: 3px;
+  padding: 0 4px;
+  font-size: 0.62rem;
+}
+
+.navbar-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #e07d4a;
+  color: #fffaf1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(181, 91, 50, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.navbar-btn:hover {
+  transform: translateY(-1px);
+  background: #c96a3b;
+  box-shadow: 0 3px 8px rgba(181, 91, 50, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-top-bar {
+    padding: 24px clamp(20px, 5vw, 72px) 14px;
+  }
+  .hero-top-bar-logo img {
+    height: 65px;
+  }
+  .navbar-logo-mark img {
+    height: 48px;
+  }
+}
+
+/* Mobile Navbar Overlay */
+.navbar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+.navbar-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .hero-top-bar {
+    padding: 20px clamp(16px, 4vw, 60px) 12px;
+  }
+  .hero-top-bar-logo img {
+    height: 55px;
+  }
+  .hero-top-bar-lang {
+    gap: 12px;
+  }
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+  .sticky-navbar {
+    overflow: visible;
+    height: auto;
+    min-height: 55px;
+  }
+
+  .navbar-container {
+    padding: 10px 16px 10px 0;
+    justify-content: flex-start;
+  }
+
+  .navbar-logo {
+    display: none;
+  }
+
+  .navbar-links {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    background: transparent;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px 20px 2px 20px;
+    transition: none;
+    z-index: 1;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .navbar-links a {
+    padding: 7px 14px;
+    /* FIX 5 — Mobile nav text styling now MATCHES DESKTOP:
+       same color #3a483c, font-weight 600, letter-spacing 0.01em. */
+    font-size: 0.85rem;
+    width: auto;
+    flex: none;
+    white-space: nowrap;
+    /* border-radius removed (no more pill) */
+    border-radius: 0;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    color: #3a483c;
+    position: relative;
+  }
+
+  /* FIX 5 — Re-enable the underline indicator on mobile (same ::after as desktop) */
+  .navbar-links a::after {
+    display: block !important;
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: #5a7d5e;
+    transition: width 0.3s ease;
+  }
+
+  /* FIX 5 — Remove the active background/color pill.
+     Keep text same as default, underline indicator grows to 60% width like desktop. */
+  .navbar-links a.active {
+    background: transparent;
+    color: #3a483c;
+  }
+  .navbar-links a.active::after {
+    width: 60%;
+  }
+
+  .sticky-navbar::before {
+    display: none;
+  }
+
+  .menu-close {
+    display: none;
+  }
+
+  .navbar-overlay {
+    display: none !important;
+  }
+
+  section {
+    scroll-margin-top: 64px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+/*==================================================
+            HERO TOP BAR
+==================================================*/
+.hero-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28px clamp(20px, 5vw, 72px) 16px;
+}
+
+.hero-top-bar-logo a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-top-bar-logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hero-top-bar-lang {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid #7a8677;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #3a483c;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  border-color: #5a7d5e;
+  color: #5a7d5e;
+}
+
+.lang-btn.active {
+  border-color: #5a7d5e;
+  color: #5a7d5e;
+}
+
+.lang-flag {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Add spacing below hero top bar */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 60px);
+  flex: 1;
+}
+
+/*==================================================
+            PREMIUM MENU CARDS
+==================================================*/
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 70px 30px;
+
+  margin-top: 60px;
+
+  /* CARD FIX #1 — Height consistency:
+     align-items: stretch forces every grid cell (each .dish) to have
+     the SAME height as the TALLEST card in the row. Combined with
+     .dish { height:100% } and .panel { height:100% } below this makes
+     all cards in a section perfectly equal in height. */
+  align-items: stretch;
+}
+
+.dish {
+  position: relative;
+
+  text-align: center;
+
+  /* CARD FIX #1 — Height consistency: force .dish to fill the grid cell.
+     The grid cell is already equal-height with all its row siblings
+     thanks to align-items:stretch on the grid above. */
+  height: 100%;
+}
+
+.dish .thumb {
+  position: absolute;
+  left: 50%;
+  top: -58px;
+  transform: translateX(-50%);
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  border: 3px solid #d8c28c;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+}
+
+.food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.16);
+  transition: scale 0.3s ease;
+}
+
+.dish .thumb:hover .food-image {
+  scale: 1.08;
+}
+
+.dish .thumb {
+  cursor: pointer;
+}
+
+.dish .thumb:hover {
+  cursor: pointer;
+}
+
+.kehwa-image {
+  transform: scale(1);
+}
+
+.gajar-halwa-image {
+  transform: scale(1.4);
+}
+
+.kheer-image {
+  transform: scale(1.59);
+}
+.palak-gosht-image {
+  transform: scale(1.25);
+}
+
+.sajji-chicken-image {
+  transform: scale(1.28);
+}
+
+.daal-gosht-image {
+  transform: scale(1.45);
+}
+
+.tikka-masala-image {
+  transform: scale(1.55);
+}
+
+.kabuli-pulao-image {
+  transform: scale(1.55);
+}
+
+.chicken-chili-image {
+  transform: scale(1.5);
+}
+
+.mix-veg-pakora-image {
+  transform: scale(1.22);
+}
+
+.bhaji-cipolla-image {
+  transform: scale(1.36);
+}
+
+.chicken-pakora-image {
+  transform: scale(1.8);
+}
+
+.gamberi-pakora-image {
+  transform: scale(1.5);
+}
+
+.paneer-pakora-image {
+  transform: scale(1.2);
+}
+
+.samosa-veg-image {
+  transform: scale(1.8);
+}
+
+.samosa-carne-image {
+  transform: scale(1.6);
+}
+
+.mix-antipasto-image {
+  transform: scale(1.2);
+}
+
+.samosa-chat-image {
+  transform: scale(1.3);
+}
+
+.rooh-afza-image {
+  transform: scale(1);
+}
+
+.bottiglie-vetro-image {
+  transform: scale(1);
+}
+
+.acqua-image {
+  transform: scale(1);
+}
+
+.caffe-image {
+  transform: scale(1.2);
+}
+
+.lassi-image {
+  transform: scale(1);
+}
+
+.mango-lassi-image {
+  transform: scale(1);
+}
+
+.mango-shake-image {
+  transform: scale(1);
+}
+
+.mint-lassi-image {
+  transform: scale(1);
+}
+
+.kashmiri-chai-image {
+  transform: scale(1.1);
+}
+
+.chai-image {
+  transform: scale(1.2);
+}
+
+.chicken-wings-image {
+  transform: scale(1.4);
+}
+
+.nuggets-image {
+  transform: scale(1.6);
+}
+
+.tandoori-biryani-image {
+  transform: scale(1.2);
+}
+
+.pilaf-rice-image {
+  transform: scale(1.3);
+}
+
+.baingan-bharta-image {
+  transform: scale(1.28);
+}
+
+.channa-image {
+  transform: scale(1.3);
+}
+
+.chili-paneer-image {
+  transform: scale(1.4);
+}
+
+.dish .thumb svg {
+  width: 55px;
+
+  height: 55px;
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  stroke: #5a6d4c;
+}
+
+.dish .panel {
+  background: white;
+
+  border-radius: 25px;
+
+  padding: 95px 20px 22px;
+
+  min-height: 205px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  /* CARD FIX #1 — Height consistency:
+     - height:100% makes white panel fill the .dish wrapper (which itself
+       fills the equal-height grid cell via .dish height:100%)
+     - box-sizing ensures padding doesn't cause overflow / extra height
+     - display:flex + flex-direction:column lets us push the description
+       area to expand so all titles + prices line up vertically. */
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.dish.dark .panel {
+  background: #0A3D2E;
+}
+
+.dish.light .panel {
+  background: #0A3D2E;
+}
+
+.dish h3 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  font-family: "Playfair Display", serif;
+
+  /* CARD FIX #1 — Height consistency:
+     h3 is a flex item with fixed height in the column;
+     flex:0 0 auto prevents it from growing, so description takes
+     the extra space below it. */
+  flex: 0 0 auto;
+}
+
+.dish.light h3 {
+  color: white;
+}
+
+.dish.dark h3 {
+  color: white;
+}
+
+.dish .desc {
+  margin-top: 12px;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #d9e3d1;
+
+  /* CARD FIX #1 — Height consistency:
+     desc grows/shrinks to fill leftover space inside the panel.
+     This keeps every card looking balanced and clean — shorter
+     descriptions get more breathing room, longer descriptions
+     still fit naturally. */
+  flex: 1 1 auto;
+}
+
+.dish.dark .desc {
+  color: #d9e3d1;
+}
+
+.price {
+  position: absolute;
+
+  right: 18px;
+
+  top: 18px;
+
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #355f3b;
+
+  color: white;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+  z-index: 30;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   DOLCI (DESSERTS) PRICE TAGS — inherit standard positioning
+   ---------------------------------------------------------
+   .price defaults (right:18px top:18px 55px circle) are
+   intentionally used for desserts too so each €5,50 badge
+   sits naturally in the top-right corner of its card,
+   visually attached to the panel exactly like all other
+   dishes on the menu. No dolci-specific offset is applied.
+   ========================================================= */
+
+/* =========================================================
+   TEXT-MENU SECTIONS — reference-style elegant text rows
+   ---------------------------------------------------------
+   Light cream/pale green aesthetic with thin muted-green
+   borders and rounded corners. Name + desc LEFT, price RIGHT.
+   Matches the visual reference exactly.
+   ========================================================= */
+
+/* Outer wrapper around text-only items (placed below the grid / notebox) */
+.text-menu {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+/* 2-column grid for "2 × 2" arrangement (recently-added top 4, veggies Gobi+Laal) */
+.text-row-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Individual row-style container — pale green bg, thin green border, rounded */
+.text-row {
+  background: #e1ebd3;            /* subtle pale sage green */
+  border: 1.5px solid #a4b894;    /* muted thin green border */
+  border-radius: 16px;             /* elegant rounded corners */
+  padding: 18px 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  box-sizing: border-box;
+  min-height: 96px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Subtle alternating shade to prevent visual fatigue where needed */
+.text-row-grid .text-row:nth-child(even) {
+  background: #dde8cc;
+  border-color: #9fb48a;
+}
+
+.text-row-full {
+  width: 100%;
+}
+
+/* LEFT column — name + description */
+.text-row-left {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.text-row-name {
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+  color: #1e3a23;
+  text-align: left;
+}
+
+.text-row-desc {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #4f5e49;
+  text-align: left;
+}
+
+/* RIGHT column — price, neatly aligned */
+.text-row-price {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+  color: #205030;
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 900px) {
+  .text-row-grid { grid-template-columns: 1fr 1fr; }
+}
+/* Mobile breakpoint — stack all items full-width */
+@media (max-width: 720px) {
+  .text-row-grid { grid-template-columns: 1fr; }
+  .text-row { padding: 16px 18px; min-height: 88px; }
+  .text-row-name { font-size: 19.5px; }
+  .text-row-price { font-size: 18.5px; }
+  .text-row-desc { font-size: 14px; }
+}
+
+/* FIX 4 — Sweet Endings / Dolci centering:
+   - Dolci has only 3 dishes, which look left-aligned in a 4-column grid.
+   - We switch to an explicit 3-column layout ONLY for the dolci grid so the
+     three cards sit perfectly centered as a full row on desktop.
+   - For tablet (3-col) and mobile (2-col / 1-col) breakpoints below we
+     additionally apply justify-items:center + width:100% on each card so
+     they always fill their slot and the overall row is never off-center.
+   - Card sizes (thumb, panel, price) are untouched. */
+.grid[data-section="dolci"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+.grid[data-section="dolci"] .dish {
+  width: 100%;
+  max-width: 280px;
+}
+
+/* FIX 4 — Dolci on tablet (≤992px): 3 columns defaulted by general rule, keep centered */
+@media (max-width: 992px) {
+  .grid[data-section="dolci"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* FIX 4 — Dolci on mobile (≤768px): center 2 cards on row 1, 1 card centered on row 2 */
+@media (max-width: 768px) {
+  .grid[data-section="dolci"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-items: center;
+  }
+  .grid[data-section="dolci"] .dish {
+    width: 100%;
+    max-width: none;
+  }
+  /* FIX 4 — On ≤576px: same as above, 2-col centered */
+}
+@media (max-width: 576px) {
+  .grid[data-section="dolci"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-items: center;
+  }
+}
+/* FIX 4 — On ≤480px / tiny mobile, if we collapse to 1-col, still center */
+@media (max-width: 480px) {
+  .grid[data-section="dolci"] {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+  }
+  .grid[data-section="dolci"] .dish {
+    max-width: 320px;
+  }
+}
+
+.spice {
+  margin-left: 5px;
+}
+
+/*=============================
+        MOBILE
+=============================*/
+
+@media (max-width: 768px) {
+  .dish .thumb {
+    width: 105px;
+    height: 105px;
+    top: -45px;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+.script {
+  font-family: "Allura", cursive;
+}
+
+/* ---------- ornaments ---------- */
+.rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--sage-dark);
+  margin: 10px auto 30px;
+  width: min(90%, 360px);
+}
+.rule::before,
+.rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+.rule svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  stroke: var(--sage-dark);
+}
+
+.branch {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  stroke: #a7b48c;
+  stroke-width: 1.1;
+  fill: none;
+  opacity: 0.85;
+}
+.branch.left {
+  left: 18px;
+  top: 26px;
+  transform: scaleX(-1);
+}
+.branch.right {
+  right: 18px;
+  top: 26px;
+}
+@media (max-width: 640px) {
+  .branch {
+    width: 74px;
+  }
+}
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  min-height: min(720px, 100vh);
+  padding: 0 clamp(20px, 5vw, 72px) 42px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #f8f0e1 0%,
+    #f4ecdc 49%,
+    #dce5d5 49%,
+    #dce5d5 100%
+  );
+  border-bottom: 1px solid #bcc9b9;
+}
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.hero::before {
+  width: 62vw;
+  height: 26vw;
+  left: -13vw;
+  bottom: -16vw;
+  background: #d5dfd1;
+  transform: rotate(-8deg);
+}
+.hero::after {
+  width: 50vw;
+  height: 20vw;
+  right: -20vw;
+  top: 48%;
+  background: #c8d5c6;
+  transform: rotate(12deg);
+}
+.hero-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1380px;
+  min-height: min(652px, calc(100vh - 86px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+.hero-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) minmax(0, auto) minmax(270px, 1fr);
+  align-items: center;
+  gap: clamp(22px, 4vw, 64px);
+  min-height: 78px;
+  height: 78px;
+  padding: 0 clamp(20px, 5vw, 72px);
+  background: linear-gradient(
+    124deg,
+    #f8f2e7 0%,
+    #f8f2e7 56%,
+    #d6e0d2 56%,
+    #d6e0d2 100%
+  );
+  box-shadow: 0 5px 18px rgba(54, 73, 56, 0.1);
+  backdrop-filter: blur(8px);
+}
+.hero-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: max-content;
+  color: #263228;
+  text-decoration: none;
+  line-height: 1.05;
+}
+.hero-logo-mark {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #4b7257;
+  color: #f7f1e4;
+  box-shadow: 0 5px 12px rgba(43, 68, 48, 0.14);
+}
+.hero-logo-mark svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+.hero-logo b,
+.hero-logo small {
+  display: block;
+}
+.hero-logo b {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+.hero-logo small {
+  margin-top: 3px;
+  color: #758073;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 60px);
+  flex: 1;
+  padding: 36px 0 22px;
+}
+.hero-copy {
+  max-width: 520px;
+  padding: 24px 0 0 0;
+  text-align: left;
+  animation: hero-fade-up 0.7s ease both;
+}
+
+.hero-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.68rem;
+  color: #596659;
+}
+.hero-topbar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+}
+.hero-topbar span.active {
+  color: var(--forest);
+  font-weight: 500;
+}
+.hero-topbar .flag {
+  border: 1px solid #93a58e;
+  border-radius: 3px;
+  padding: 0 5px;
+  font-size: 0.66rem;
+}
+.hero-nav > .catnav {
+  position: static;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  display: flex;
+  gap: clamp(14px, 2vw, 30px);
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+  margin: 0;
+}
+.hero-nav > .catnav a {
+  padding: 4px 0;
+  border: 0;
+  border-radius: 0;
+  color: #39443b;
+  font-size: 0.66rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.hero-nav > .catnav a:hover,
+.hero-nav > .catnav a.active {
+  color: #263b2b;
+  background: transparent;
+  border: 0;
+}
+.hero-nav > .catnav a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin: 3px auto 0;
+  background: #4b7257;
+  transition: width 0.25s ease;
+}
+.hero-nav > .catnav a:hover::after,
+.hero-nav > .catnav a.active::after {
+  width: 100%;
+}
+.hero-booking {
+  display: inline-flex;
+  justify-content: center;
+  justify-self: end;
+  padding: 9px 17px;
+  border-radius: 999px;
+  background: #df7c4b;
+  color: #fffaf1;
+  font-size: 0.66rem;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(181, 91, 50, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.hero-actions {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(14px, 2vw, 28px);
+}
+.hero-menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border: 0;
+  border-radius: 50%;
+  background: #dbe5d5;
+  cursor: pointer;
+}
+.hero-menu-toggle span {
+  display: block;
+  height: 1.5px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: #3c5d45;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+.hero-booking:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 16px rgba(181, 91, 50, 0.24);
+}
+
+.badge-halal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  /* border: 1px solid var(--sage-dark); */
+  border-radius: 30px;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 24px;
+  background: rgba(255, 251, 241, 0.62);
+  box-shadow: 0 5px 15px rgba(78, 96, 76, 0.08);
+}
+.badge-halal svg {
+  width: 13px;
+  height: 13px;
+}
+
+.hero .script {
+  display: block;
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  color: #304a37;
+  line-height: 0.88;
+}
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  font-weight: 700;
+  margin: 2px 0 0;
+  color: #263228;
+  line-height: 0.92;
+}
+.hero .subtitle {
+  margin-top: 22px;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: #667366;
+}
+.hero .tag {
+  max-width: 440px;
+  margin: 17px 0 0;
+  color: #59645a;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+.hero .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  padding: 12px 24px;
+  border-radius: 40px;
+  border: none;
+  background: #0A3D2E;
+  color: #fffaf1;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 7px 14px rgba(48, 77, 53, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.hero .cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(48, 77, 53, 0.27);
+}
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  max-width: 720px;
+  margin: 0 auto 0 0;
+  animation: hero-fade-up 0.8s 0.12s ease both;
+  text-decoration: none;
+  display: block;
+}
+.hero-image-layer {
+  position: absolute;
+  border-radius: 48px;
+  pointer-events: none;
+}
+.hero-image-layer.layer-1 {
+  width: 93%;
+  aspect-ratio: 1.4 / 1;
+  top: 3.5%;
+  left: 3.5%;
+  background: rgba(248, 242, 231, 0.65);
+  z-index: 0;
+}
+.hero-image-layer.layer-2 {
+  width: 86%;
+  aspect-ratio: 1.4 / 1;
+  top: 7%;
+  left: 7%;
+  background: rgba(201, 217, 201, 0.5);
+  z-index: 1;
+}
+.hero-image-frame {
+  position: relative;
+  z-index: 3;
+  aspect-ratio: 1.4 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 48px;
+  background: #b8c9bd;
+  box-shadow: 0 18px 40px rgba(52, 75, 57, 0.15);
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+}
+.hero-image-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(255, 250, 241, 0.35) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 40%;
+  transform: scale(1.15);
+  animation: hero-image-float 7s ease-in-out infinite;
+}
+.hero-accent-card {
+  position: absolute;
+  z-index: 2;
+  width: 140px;
+  height: 100px;
+  top: 12%;
+  left: -18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(52, 75, 57, 0.08);
+}
+.hero-badge {
+  position: absolute;
+  z-index: 4;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  column-gap: 6px;
+  min-width: 104px;
+  padding: 11px 13px;
+  border-radius: 17px;
+  background: rgba(231, 238, 221, 0.95);
+  color: #314b37;
+  box-shadow: 0 6px 14px rgba(42, 67, 47, 0.12);
+  animation: hero-badge-float 4s ease-in-out infinite;
+}
+.hero-badge span {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #bdd0b8;
+  font-size: 0.9rem;
+}
+.hero-badge b,
+.hero-badge small {
+  display: block;
+}
+.hero-badge b {
+  font-size: 0.66rem;
+}
+.hero-badge small {
+  margin-top: 2px;
+  color: #637162;
+  font-size: 0.55rem;
+}
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  max-width: 530px;
+  padding-left: clamp(0px, 2vw, 28px);
+  animation: hero-fade-up 0.7s 0.24s ease both;
+}
+.hero-features span {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  color: #526153;
+  font-size: 17px;
+  line-height: 1.2;
+}
+.hero-features i {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: #d4e1ce;
+  color: #4d7358;
+}
+.hero-features svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+}
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-image-float {
+  0%,
+  100% {
+    transform: scale(1.02) translateY(0);
+  }
+  50% {
+    transform: scale(1.04) translateY(-5px);
+  }
+}
+@keyframes hero-badge-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@media (max-width: 1050px) {
+  .hero-nav {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 18px;
+    padding-inline: 24px;
+  }
+  .hero-nav > .catnav {
+    justify-content: center;
+    gap: 11px;
+  }
+  .hero-nav > .catnav a {
+    font-size: 0.6rem;
+  }
+  .hero-actions {
+    gap: 12px;
+  }
+  .hero-topbar {
+    gap: 8px;
+    font-size: 0.58rem;
+  }
+}
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding: 18px 20px 30px;
+  }
+  .hero-shell {
+    min-height: auto;
+    padding-top: 72px;
+  }
+  .hero-nav {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    min-height: 68px;
+    padding-inline: 18px;
+  }
+  .hero-booking {
+    padding: 8px 12px;
+    font-size: 0.6rem;
+  }
+  .hero-topbar {
+    display: none;
+  }
+  .hero-menu-toggle {
+    display: block;
+  }
+  .hero-menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+  .hero-menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hero-menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-5.5px) rotate(-45deg);
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 48px 0 28px;
+  }
+  .hero-copy {
+    max-width: 500px;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-visual {
+    margin: 0 auto;
+  }
+  .hero .script {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
+  .hero-image-frame {
+    height: min(72vw, 420px);
+    border-radius: 28px 28px 28px 76px;
+  }
+  .hero-features {
+    max-width: 500px;
+    padding-left: 0;
+    gap: 10px;
+  }
+  .hero-features span {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* ---------- nav ---------- */
+nav.catnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(238, 241, 227, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 10px;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav.catnav::-webkit-scrollbar {
+  display: none;
+}
+nav.catnav a {
+  flex: none;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+nav.catnav a:hover,
+nav.catnav a.active {
+  color: var(--cream);
+  border-color: var(--forest);
+  background: var(--forest);
+}
+
+/* ---------- sections ---------- */
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px 20px 60px;
+}
+section {
+  padding: 52px 0 8px;
+  scroll-margin-top: 90px;
+}
+.sec-head {
+  text-align: center;
+  margin-bottom: 6px;
+}
+.sec-head .eyebrow {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.sec-head h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 600;
+  margin: 0;
+  color: var(--forest);
+}
+.sec-head .sub {
+  font-style: italic;
+  color: var(--sage-dark);
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+.sec-note {
+  max-width: 640px;
+  margin: 14px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* ---------- list-style panel (curry builder / dotted leaders) ---------- */
+.list-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 38px;
+}
+@media (max-width: 700px) {
+  .list-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+.list-panel {
+  background: var(--sage-light-2);
+  border-radius: 16px;
+  padding: 26px 26px 10px;
+}
+.list-panel h3 {
+  margin: 0 0 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+.list-panel h3 .num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 0.8rem;
+}
+.list-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 11px 0;
+  border-bottom: 1px dotted var(--sage-dark);
+  font-size: 0.92rem;
+}
+.list-row:last-child {
+  border-bottom: none;
+}
+.list-row .name {
+  color: var(--forest);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.list-row .name .d {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 300;
+  font-style: italic;
+}
+.list-row .leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--sage-dark);
+  margin-bottom: 5px;
+  min-width: 10px;
+}
+.list-row .amt {
+  flex: none;
+  min-width: 52px;
+  height: 32px;
+  border-radius: 16px;
+  background: var(--badge);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 0.78rem;
+  padding: 0 10px;
+}
+
+.couplet {
+  margin-top: 22px;
+  background: #4F6246;
+  color: #FFF8EE;
+  border-radius: 14px;
+  padding: 18px 24px;
+  font-style: italic;
+  font-family: "Playfair Display", serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* ---------- allergens ---------- */
+.allergen-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px 24px;
+  margin-top: 30px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.allergen-list li {
+  /* FIX 2 — Allergens list items:
+     - box background #F7F2E8 (warm cream, matches theme)
+     - 1px solid border #D4BE86 (golden, echoes premium accent)
+     - body text #4F6246 (sage green)
+     layout/spacing (padding 12px 16px, border-radius 10px, line-height, font-size) untouched */
+  color: #4F6246;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  list-style: none;
+  background: #F7F2E8;
+  border: 1px solid #D4BE86;
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+.allergen-list b {
+  /* FIX 2 — Allergen bold headings inside each li -> #0A3D2E (deep forest) */
+  color: #0A3D2E;
+  font-weight: 600;
+}
+/* FIX 2 — Allergens section h2 heading (sec-head h2 inside #allergeni) -> #0A3D2E */
+#allergeni .sec-head h2 {
+  color: #0A3D2E;
+}
+/* FIX 2 — Allergens section description note -> #4F6246 */
+#allergeni .sec-note {
+  color: #4F6246;
+}
+/* FIX 2 — Allergens eyebrow -> keep existing gold, but ensure bold headings match theme */
+#allergeni .sec-head .eyebrow {
+  color: var(--gold);
+}
+.notebox {
+  max-width: 720px;
+  margin: 26px auto 0;
+  text-align: center;
+  /* FIX 1 — Nota/Info bars: background updated to #4F6246 as requested.
+     Text color kept as var(--cream) (#fbfaf3) for excellent contrast. */
+  background: #4F6246;
+  border-radius: 14px;
+  padding: 16px 22px;
+  color: var(--cream);
+  font-size: 0.88rem;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 20px 60px;
+  border-top: 1px solid #D4BE86; /* FIX 3 — top accent line changed to gold #D4BE86 (matches theme accent) */
+  margin-top: 20px;
+}
+footer h3 {
+  font-size: 1.6rem;
+  font-family: "Allura", cursive;
+  /* FIX 3 — Heading color to deep forest #0A3D2E */
+  color: #0A3D2E;
+  margin: 0 0 12px;
+  font-weight: 400;
+}
+footer p {
+  /* FIX 3 — Paragraph text to sage #4F6246 */
+  color: #4F6246;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+footer .contact {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  /* FIX 3 — Contact line text color to sage #4F6246 */
+  color: #4F6246;
+}
+footer .contact span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+footer .contact svg {
+  width: 14px;
+  height: 14px;
+  /* FIX 3 — SVG strokes (accent icons) changed to gold #CFA74A */
+  stroke: #CFA74A;
+}
+footer .handles {
+  margin-top: 16px;
+  /* FIX 3 — Handles/social row text color sage #4F6246 */
+  color: #4F6246;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+::selection {
+  background: var(--sage-dark);
+  color: var(--cream);
+}
+
+/* =======================================================
+    COMPREHENSIVE RESPONSIVE MEDIA QUERIES
+   ======================================================= */
+
+/* --- 1440px and below --- */
+@media (max-width: 1440px) {
+  .hero-shell {
+    max-width: 1200px;
+  }
+  main {
+    max-width: 1080px;
+  }
+}
+
+/* --- 1200px and below --- */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 0 clamp(18px, 4vw, 60px) 38px;
+  }
+  .hero-top-bar {
+    padding: 24px clamp(18px, 4vw, 60px) 14px;
+  }
+  .hero-grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+    gap: clamp(20px, 3.5vw, 50px);
+  }
+  .navbar-container {
+    max-width: 1200px;
+  }
+  main {
+    max-width: 1000px;
+  }
+}
+
+/* --- 992px and below --- */
+@media (max-width: 992px) {
+  .hero-top-bar-logo img {
+    height: 72px;
+  }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(18px, 3vw, 45px);
+  }
+  .hero-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 400px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* CARD FIX #3 — Overlap safe row-gap:
+       Desktop-style thumbs (145x145, top:-58) protrude 58px above card.
+       We set row-gap = 58 (protrusion) + 10 (safe visual buffer) = 68px.
+       Previously 78 — still safe, but less excess whitespace. */
+    gap: 68px 28px;
+  }
+  .price {
+    right: calc(50% - 99.5px);
+  }
+  .allergen-list {
+    max-width: 720px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 20px;
+    padding: 0 12px;
+  }
+  .allergen-list li {
+    text-align: left;
+  }
+  .navbar-links {
+    gap: 22px;
+  }
+  .navbar-links a {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- 768px and below --- */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 20px 34px;
+  }
+  .hero-top-bar {
+    padding: 20px 20px 12px;
+  }
+  .hero-top-bar-logo img {
+    height: 60px;
+  }
+  .hero-top-bar-lang {
+    gap: 12px;
+  }
+  .lang-btn {
+    padding: 5px 12px;
+    font-size: 0.78rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 0 24px;
+  }
+  .hero-copy {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+/* --- FIX: Previously hid .hero-visual with display:none which broke mobile hero image.
+       Now we KEEP the visual and reorder with CSS grid (visual on top, copy below) — see final mobile overrides at EOF */
+  .hero-visual {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  /* hero-features: hidden on smallest mobile for visual clarity; shown centered on larger mobile */
+  .hero-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 420px;
+    margin: 0 auto;
+    padding-left: 0;
+    gap: 12px 10px;
+  }
+  .hero-features span {
+    align-items: center;
+    flex-direction: row;
+    gap: 7px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* CARD FIX #3 — Overlap safe row-gap:
+       thumbs 115x115 with top:-50, so protrude 50px above card.
+       row-gap: 50 (protrusion) + 10 (safe buffer) = 60px.
+       Was 88 — much tighter now, no excess space but never overlaps. */
+    gap: 60px 24px;
+  }
+  .dish .thumb {
+    width: 115px;
+    height: 115px;
+    top: -50px;
+  }
+  /* CARD FIX #2 — Mobile card shape:
+     Thumb 115 at top:-50 → thumb bottom sits at y = 50+115? No:
+     thumb bottom is (-50 + 115) = 65px below panel top.
+     Desktop has padding-top: 95 with 145 thumb/-58 → 8px breathing.
+     So desired padding-top = (thumb_bottom_below_panel) + breathing
+                            = (115 - 50) + 8 = 73.  We use 74 for even px.
+     Also preserve min-height proportional (205→~185). */
+  .dish .panel {
+    padding: 74px 20px 22px;
+    min-height: 190px;
+  }
+  .price {
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+    right: calc(50% - 84.5px);
+    top: 14px;
+  }
+  .allergen-list {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-inline: auto;
+    padding: 0 8px;
+  }
+  .allergen-list li {
+    text-align: left;
+  }
+  .sec-head h2 {
+    font-size: clamp(1.5rem, 5vw, 2.1rem);
+  }
+  section {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* --- 576px and below --- */
+@media (max-width: 576px) {
+  .hero-top-bar-logo img {
+    height: 52px;
+  }
+  .hero-top-bar-lang {
+    gap: 10px;
+  }
+  .lang-btn {
+    padding: 4px 10px;
+    font-size: 0.74rem;
+  }
+  .hero .script {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
+  }
+  .hero .cta-btn {
+    padding: 11px 20px;
+    font-size: 0.86rem;
+  }
+  .hero-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    /* CARD FIX #3 — Overlap safe row-gap:
+       thumbs 125x125 with top:-55 (protrude 55px above card).
+       row-gap = 55 + 10 = 65px → use 66. Was 92, too much space. */
+    gap: 66px 0;
+    margin-top: 50px;
+  }
+  .dish .thumb {
+    width: 125px;
+    height: 125px;
+    top: -55px;
+  }
+  /* CARD FIX #2 — Mobile card shape:
+     Thumb 125 at top:-55 → thumb_bottom_inside = 125 - 55 = 70
+     + 8 breathing = 78 padding-top. Proportional min-height. */
+  .dish .panel {
+    padding: 78px 22px 24px;
+    min-height: 200px;
+  }
+  .price {
+    width: 52px;
+    height: 52px;
+    font-size: 14px;
+    right: calc(50% - 90.5px);
+    top: 16px;
+  }
+  .allergen-list {
+    max-width: 400px;
+  }
+  .allergen-list li {
+    padding: 10px 12px;
+  }
+  .list-wrap {
+    grid-template-columns: 1fr;
+  }
+  .couplet {
+    font-size: 0.9rem;
+    padding: 16px 20px;
+  }
+}
+
+/* --- 480px and below --- */
+@media (max-width: 480px) {
+  .hero-top-bar {
+    padding: 16px 16px 10px;
+  }
+  .hero-top-bar-logo img {
+    height: 48px;
+  }
+  .lang-btn {
+    padding: 4px 9px;
+    font-size: 0.72rem;
+  }
+  .hero-grid {
+    gap: 28px;
+    padding: 28px 0 20px;
+  }
+  .hero .script {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+  }
+  .hero .subtitle {
+    font-size: 0.78rem;
+  }
+  .hero .tag {
+    font-size: 0.78rem;
+  }
+  .hero-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .hero-features span {
+    font-size: 15px;
+  }
+  .hero-features i {
+    width: 28px;
+    height: 28px;
+  }
+  .hero-features svg {
+    width: 20px;
+    height: 20px;
+  }
+  .dish .panel {
+    padding: 90px 18px 20px;
+    min-height: 190px;
+  }
+  .dish h3 {
+    font-size: 1.1rem;
+  }
+  .dish .desc {
+    font-size: 0.84rem;
+  }
+  .sec-head .eyebrow {
+    font-size: 0.64rem;
+  }
+  .sec-head h2 {
+    font-size: clamp(1.3rem, 6vw, 1.9rem);
+  }
+  .sec-note {
+    font-size: 0.84rem;
+  }
+  section {
+    padding: 42px 0 6px;
+    scroll-margin-top: 70px;
+  }
+  footer {
+    padding: 40px 16px 50px;
+  }
+}
+
+/* --- 375px and below --- */
+@media (max-width: 375px) {
+  .hero {
+    padding: 0 14px 30px;
+  }
+  .hero-top-bar {
+    padding: 14px 14px 8px;
+  }
+  .hero-top-bar-logo img {
+    height: 44px;
+  }
+  .lang-btn {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+  .hero .script {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .hero .cta-btn {
+    padding: 10px 18px;
+    font-size: 0.82rem;
+  }
+  .hero-features span {
+    font-size: 14px;
+  }
+  .dish .thumb {
+    width: 115px;
+    height: 115px;
+    top: -50px;
+  }
+  .price {
+    width: 48px;
+    height: 48px;
+    font-size: 13px;
+    right: calc(50% - 83.5px);
+    top: 14px;
+  }
+  .list-panel {
+    padding: 22px 20px 8px;
+  }
+  .allergen-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 320px and below --- */
+@media (max-width: 320px) {
+  .hero {
+    padding: 0 12px 26px;
+  }
+  .hero-top-bar {
+    padding: 12px 12px 6px;
+  }
+  .hero-top-bar-logo img {
+    height: 40px;
+  }
+  .lang-btn {
+    padding: 3px 7px;
+    font-size: 0.66rem;
+  }
+  .hero .script {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+  .hero .subtitle {
+    font-size: 0.72rem;
+  }
+  .hero .tag {
+    font-size: 0.72rem;
+  }
+  .hero-features span {
+    font-size: 13px;
+  }
+  .dish .panel {
+    padding: 85px 14px 18px;
+    min-height: 180px;
+  }
+  .dish h3 {
+    font-size: 1rem;
+  }
+  .dish .desc {
+    font-size: 0.8rem;
+  }
+  .sec-head .eyebrow {
+    font-size: 0.6rem;
+  }
+  .sec-head h2 {
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
+  }
+}
+
+/* =======================================================
+   MOBILE-ONLY OPTIMIZATION OVERRIDES
+   (appended — does not alter any rule above; these win
+   the cascade only at their respective mobile widths so
+   desktop/tablet layouts above 768px are 100% untouched)
+   ======================================================= */
+
+@media (max-width: 768px) {
+  /* ---- 1. Hero: more compact + fully centered ---- */
+  .hero {
+    padding-bottom: 22px;
+  }
+  .hero-shell {
+    padding-top: 60px;
+  }
+  .hero-grid {
+    padding: 22px 0 10px;
+    gap: 20px;
+  }
+  .hero-copy {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero .script,
+  .hero h1,
+  .hero .subtitle,
+  .hero .tag {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .badge-halal {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .cta-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---- 2. Sticky category nav: force single scrollable row ---- */
+  nav.catnav {
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 8px;
+  }
+  nav.catnav a {
+    padding: 8px 14px;
+    font-size: 0.72rem;
+    position: relative;
+    color: #3a483c;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+  }
+  /* FIX 5 — catnav on mobile: remove dark active/hover pill.
+     Text stays default color, use underline ::after indicator like desktop. */
+  nav.catnav a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: #5a7d5e;
+    transition: width 0.3s ease;
+  }
+  nav.catnav a.active,
+  nav.catnav a:hover {
+    background: transparent;
+    border-color: transparent;
+    color: #3a483c;
+  }
+  nav.catnav a.active::after,
+  nav.catnav a:hover::after {
+    width: 60%;
+  }
+
+  /* ---- 3. Menu cards: 2 per row, equal width & height ---- */
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch;
+    gap: 70px 14px;
+  }
+  .dish {
+    height: 100%;
+  }
+  .dish .thumb {
+    width: 130px;
+    height: 130px;
+    top: -56px;
+  }
+  .dish .panel {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 82px 14px 18px;
+    min-height: 195px;
+  }
+  .price {
+    width: 52px;
+    height: 52px;
+    font-size: 13px;
+    right: calc(50% - 90px);
+    top: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch;
+    gap: 66px 12px;
+    margin-top: 50px;
+  }
+  .dish {
+    height: 100%;
+  }
+  .dish .thumb {
+    width: 118px;
+    height: 118px;
+    top: -52px;
+  }
+  .dish .panel {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 74px 12px 16px;
+    min-height: 185px;
+  }
+  .price {
+    width: 48px;
+    height: 48px;
+    font-size: 12px;
+    right: calc(50% - 78px);
+    top: 12px;
+  }
+  .allergen-list {
+    max-width: 360px;
+  }
+  .allergen-list li {
+    padding: 9px 10px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    align-items: stretch;
+    gap: 62px 10px;
+  }
+  .dish {
+    height: 100%;
+  }
+  .dish .thumb {
+    width: 106px;
+    height: 106px;
+    top: -48px;
+  }
+  .dish .panel {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 66px 10px 14px;
+    min-height: 178px;
+  }
+  .dish h3 {
+    font-size: 0.95rem;
+    flex: 0 0 auto;
+  }
+  .dish .desc {
+    font-size: 0.76rem;
+    flex: 1 1 auto;
+  }
+  .price {
+    width: 44px;
+    height: 44px;
+    font-size: 11px;
+    right: calc(50% - 72px);
+    top: 10px;
+  }
+  .allergen-list {
+    max-width: 320px;
+  }
+  .allergen-list li {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .grid {
+    align-items: stretch;
+    gap: 56px 8px;
+  }
+  .dish {
+    height: 100%;
+  }
+  .dish .thumb {
+    width: 94px;
+    height: 94px;
+    top: -42px;
+  }
+  .dish .panel {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 9px 13px;
+    min-height: 168px;
+    border-radius: 24px;
+  }
+  .dish h3 {
+    font-size: 0.9rem;
+    flex: 0 0 auto;
+  }
+  .dish .desc {
+    font-size: 0.74rem;
+    line-height: 1.5;
+    flex: 1 1 auto;
+  }
+  .price {
+    right: calc(50% - 66px);
+    width: 42px;
+    height: 42px;
+    font-size: 10.5px;
+    top: 9px;
+  }
+  .allergen-list {
+    max-width: 100%;
+    padding: 0 6px;
+  }
+  .allergen-list li {
+    padding: 8px 8px;
+    font-size: 0.78rem;
+  }
+  /* (the duplicate .dish .panel / h3 / desc that was here have been
+     removed — Fix #2 shape rules live earlier inside this same
+     @media (max-width:375px) block to avoid cascade overrides) */
+}
+
+@media (max-width: 320px) {
+  .grid {
+    align-items: stretch;
+    gap: 52px 6px;
+  }
+  .dish {
+    height: 100%;
+  }
+  .dish .thumb {
+    width: 84px;
+    height: 84px;
+    top: -38px;
+  }
+  .dish .panel {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 54px 8px 12px;
+    min-height: 160px;
+    border-radius: 22px;
+  }
+  .dish h3 {
+    font-size: 0.82rem;
+    flex: 0 0 auto;
+  }
+  .dish .desc {
+    font-size: 0.68rem;
+    line-height: 1.4;
+    flex: 1 1 auto;
+  }
+  .price {
+    right: calc(50% - 62px);
+    width: 40px;
+    height: 40px;
+    font-size: 9.5px;
+    top: 8px;
+  }
+}
+
+/* =======================================================
+   TABLET-ONLY (769px – 1024px) STICKY HORIZONTAL CAT NAV
+   (appended last — wins cascade over all earlier breakpoints
+    like max-width: 1200px, max-width: 992px, max-width: 1050px)
+   ======================================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sticky-navbar {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 55px;
+  }
+
+  .sticky-navbar::before {
+    display: none !important;
+  }
+
+  .navbar-container {
+    padding: 10px 0 !important;
+    justify-content: flex-start !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .navbar-logo {
+    display: none !important;
+  }
+
+  .navbar-right {
+    display: none !important;
+  }
+
+  .navbar-links {
+    display: flex !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 4px 24px 6px 24px !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    transition: none !important;
+    z-index: 1 !important;
+    right: auto !important;
+    top: auto !important;
+    flex: 1 1 auto !important;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .navbar-links a {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: 8px 16px !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    white-space: nowrap !important;
+    /* FIX 5 — Tablet (same as mobile): no pill border-radius */
+    border-radius: 0 !important;
+    color: #3a483c !important;
+    position: relative !important;
+    border: none !important;
+  }
+
+  /* FIX 5 — Tablet: re-enable underline indicator (matches desktop) */
+  .navbar-links a::after {
+    display: block !important;
+    content: "" !important;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1.5px;
+    background: #5a7d5e;
+    transition: width 0.3s ease;
+  }
+
+  /* FIX 5 — Tablet: remove active background pill, keep same text color, show underline */
+  .navbar-links a.active {
+    background: transparent !important;
+    color: #3a483c !important;
+  }
+  .navbar-links a.active::after {
+    width: 60% !important;
+  }
+
+  .menu-close {
+    display: none !important;
+  }
+
+  .navbar-overlay {
+    display: none !important;
+  }
+
+  section {
+    scroll-margin-top: 64px !important;
+  }
+}
+
+/* =======================================================
+   CTA / SMOOTH SCROLL — scroll-margin for the category
+   navbar anchor target (applies to ALL widths,
+   desktop & tablet & mobile)
+   #catnav is the sticky category navbar; when the page
+   scrolls to it we want it flush with the viewport top
+   because it uses position: sticky; top: 0 and will lock
+   in place — so we give it no extra margin.
+   ======================================================= */
+#catnav {
+  scroll-margin-top: 0px;
+}
+
+/* =======================================================
+   FINAL MOBILE HERO FIXES (≤768px)
+   — image on top, full width, correct aspect ratio
+   — copy below image, centered, proper spacing
+   — NO display:none on hero-visual (image visible!)
+   — all existing animations, shadows, gradients preserved
+   — this block comes last so it overrides all earlier
+     conflicting mobile media queries (760px, 768px, etc.)
+   ======================================================= */
+@media (max-width: 768px) {
+  /* --- Hero overall: remove extra top-padding that was used
+         for a fixed nav we no longer have; keep gradient bg */
+  .hero {
+    min-height: auto;
+    padding: 0 18px 28px;
+  }
+  .hero-shell {
+    min-height: auto;
+    /* Earlier rules (e.g. max-width:760px) added padding-top:72px
+       for a fixed-position .hero-nav that does not exist in the
+       markup — reset to 0 so the top-bar sits flush */
+    padding-top: 0 !important;
+  }
+
+  /* --- Hero top-bar (logo + lang switch) on mobile: more
+         compact but still visible, never hidden */
+  .hero-top-bar {
+    padding: 18px 4px 10px;
+  }
+  .hero-top-bar-logo img {
+    height: 52px;
+  }
+  .lang-btn {
+    padding: 4px 10px;
+    font-size: 0.76rem;
+  }
+
+  /* --- Hero grid: single column, REORDER so the image
+         (hero-visual) renders FIRST (at the top), then
+         copy (title / subtitle / description / CTA) below it.
+         We use `order` so we don't have to touch the HTML. */
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+    /* visual + copy separated by a clean elegant gap */
+    gap: 28px 0 !important;
+    padding: 18px 0 16px !important;
+  }
+  .hero-visual {
+    order: 1; /* top of the column */
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    text-decoration: none;
+  }
+  .hero-copy {
+    order: 2; /* below the image */
+    max-width: 560px !important;
+    margin: 0 auto !important;
+    padding: 4px 4px 0 !important;
+    text-align: center !important;
+  }
+
+  /* --- Hero image frame: full width, aspect ratio
+         4:3 instead of fixed height — this way the image
+         is never cropped and always in proportion on any
+         mobile screen size. Rounded corners kept (premium
+         look), the golden border, the frame shadow, the
+         floating animation, and radial gradient glow
+         are all 100% preserved. */
+  .hero-image-frame {
+    width: 100% !important;
+    /* aspect-ratio preserves image shape on every mobile
+       width — no more disappearing / stretched images */
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+    /* a mobile-appropriate radius (still premium, not sharp) */
+    border-radius: 32px !important;
+    /* ensure inner image keeps its premium look */
+    border: 1.5px solid rgba(212, 175, 55, 0.45);
+    box-shadow: 0 16px 36px rgba(52, 75, 57, 0.18);
+  }
+  .hero-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+    /* the floating + scale animation (preserved) */
+    animation: hero-image-float 7s ease-in-out infinite;
+    transform: scale(1.08);
+  }
+  /* the decorative layers behind the image (preserved) */
+  .hero-image-layer.layer-1 {
+    width: 93%;
+    aspect-ratio: 4 / 3;
+    top: 3.5%;
+    left: 3.5%;
+    border-radius: 32px;
+  }
+  .hero-image-layer.layer-2 {
+    width: 86%;
+    aspect-ratio: 4 / 3;
+    top: 7%;
+    left: 7%;
+    border-radius: 32px;
+  }
+  /* the glass accent card, kept but repositioned for mobile */
+  .hero-accent-card {
+    width: 110px;
+    height: 80px;
+    top: 10%;
+    left: -8px;
+    border-radius: 20px;
+  }
+
+  /* --- Hero copy typography: centered, elegant spacing.
+         Desktop typography rules are left untouched, this
+         only tunes sizes/margins for small screens. */
+  .hero .script {
+    font-size: clamp(2.4rem, 11vw, 3.6rem);
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 13vw, 4.2rem);
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero .subtitle {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 18px auto 0;
+  }
+  .hero .tag {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    text-align: center;
+    margin: 14px auto 0;
+    max-width: 460px;
+  }
+  /* CTA button: centered, balanced spacing */
+  .hero .cta-btn {
+    margin: 22px auto 0;
+    padding: 12px 22px;
+    font-size: 0.88rem;
+  }
+  /* Halal badge: centered under CTA */
+  .badge-halal {
+    margin: 16px auto 0;
+    font-size: 0.68rem;
+  }
+
+  /* --- Hero features (4 pillars): compact 2-column grid,
+         centered under the copy — visible, never cropped */
+  .hero-features {
+    order: 3;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px 10px !important;
+    max-width: 440px !important;
+    margin: 18px auto 0 !important;
+    padding: 0 4px !important;
+  }
+  .hero-features span {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 7px !important;
+    font-size: 0.82rem !important;
+    color: #526153;
+    line-height: 1.25;
+  }
+  .hero-features i {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #d4e1ce;
+    color: #4d7358;
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+  }
+  .hero-features svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* =======================================================
+   EXTRA SMALL MOBILE (≤480px) — fine-tuned tweaks that
+   build on the 768px rules above. Everything here makes
+   the layout even more compact while remaining premium.
+   ======================================================= */
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 14px 24px;
+  }
+  .hero-top-bar {
+    padding: 14px 2px 8px;
+  }
+  .hero-top-bar-logo img {
+    height: 44px;
+  }
+  .lang-btn {
+    padding: 3px 8px;
+    font-size: 0.72rem;
+  }
+  .hero-grid {
+    gap: 22px 0 !important;
+    padding: 14px 0 12px !important;
+  }
+  .hero-image-frame {
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 24px !important;
+  }
+  .hero-image-layer.layer-1,
+  .hero-image-layer.layer-2 {
+    border-radius: 24px;
+  }
+  .hero .script {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.4rem);
+  }
+  .hero .subtitle {
+    margin-top: 14px;
+  }
+  .hero .tag {
+    margin-top: 12px;
+    font-size: 0.78rem;
+  }
+  .hero .cta-btn {
+    margin-top: 18px;
+    padding: 10px 20px;
+    font-size: 0.84rem;
+  }
+  .badge-halal {
+    margin-top: 14px;
+    padding: 5px 14px;
+  }
+  .hero-features {
+    margin-top: 14px !important;
+    gap: 10px 8px !important;
+  }
+  .hero-features span {
+    font-size: 0.76rem !important;
+  }
+  .hero-features i {
+    width: 26px;
+    height: 26px;
+  }
+  .hero-features svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =======================================================
+   TINY MOBILE (≤360px) — last polish for very small phones
+   ======================================================= */
+@media (max-width: 360px) {
+  .hero {
+    padding: 0 12px 22px;
+  }
+  .hero-image-frame {
+    border-radius: 20px !important;
+  }
+  .hero-image-layer.layer-1,
+  .hero-image-layer.layer-2 {
+    border-radius: 20px;
+  }
+  .hero .script {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+  .hero-features {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .hero-features span {
+    font-size: 0.72rem !important;
+  }
+}
