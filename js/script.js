@@ -10,6 +10,7 @@ const translations = {
       subtitle: "Ristorante Asiatico · Sapori Autentici del Pakistan",
       tag: "Un viaggio tra spezie, tandoor e tradizione. Ogni piatto racconta una storia, ogni boccone un ricordo.",
       cta: "Esplora il Menù →",
+      coperto: "Coperto €1.50",
     },
     nav: {
       recentlyAdded: "Recently Added",
@@ -139,6 +140,7 @@ const translations = {
       subtitle: "Asian Restaurant · Authentic Pakistani Flavors",
       tag: "A journey through spices, tandoor and tradition. Every dish tells a story, every bite a memory.",
       cta: "Explore the Menu →",
+      coperto: "Cover Charge €1.50",
     },
     nav: {
       recentlyAdded: "Recently Added",
@@ -583,7 +585,7 @@ const menuData = {
         d: "Ceci in sugo speziato",
         p: "8,00",
         i: "chickpea",
-        img: "chana.png",
+        img: "channa.png",
       },
       {
         n: "Chana Dhal",
@@ -789,6 +791,10 @@ const menuData = {
     accompagnamento: [],
     bevande: [
       {
+        subheading: true,
+        n: "Sorseggi Freddi",
+      },
+      {
         n: "Bottiglie in Vetro",
         d: "Bibite classiche",
         p: "3,00",
@@ -801,13 +807,6 @@ const menuData = {
         p: "2,50",
         i: "bottle",
         img: "water.png",
-      },
-      {
-        n: "Caffè",
-        d: "Espresso italiano",
-        p: "2,00",
-        i: "coffee",
-        img: "coffee.png",
       },
       {
         n: "Lassi",
@@ -843,6 +842,17 @@ const menuData = {
         p: "3,90",
         i: "rosewater",
         img: "rooh.png",
+      },
+      {
+        subheading: true,
+        n: "Sorseggi Caldi",
+      },
+      {
+        n: "Caffè",
+        d: "Espresso italiano",
+        p: "2,00",
+        i: "coffee",
+        img: "coffee.png",
       },
       {
         n: "Kehwa",
@@ -1208,7 +1218,7 @@ const menuData = {
         d: "Chickpeas in spiced sauce",
         p: "8.00",
         i: "chickpea",
-        img: "chana.png",
+        img: "channa.png",
       },
       {
         n: "Chana Dal",
@@ -1414,6 +1424,10 @@ const menuData = {
     accompagnamento: [],
     bevande: [
       {
+        subheading: true,
+        n: "Cold Sips",
+      },
+      {
         n: "Glass Bottles",
         d: "Classic drinks",
         p: "3.00",
@@ -1426,13 +1440,6 @@ const menuData = {
         p: "2.50",
         i: "bottle",
         img: "water.png",
-      },
-      {
-        n: "Coffee",
-        d: "Italian espresso",
-        p: "2.00",
-        i: "coffee",
-        img: "coffee.png",
       },
       {
         n: "Lassi",
@@ -1468,6 +1475,17 @@ const menuData = {
         p: "3.90",
         i: "rosewater",
         img: "rooh.png",
+      },
+      {
+        subheading: true,
+        n: "Hot Sips",
+      },
+      {
+        n: "Coffee",
+        d: "Italian espresso",
+        p: "2.00",
+        i: "coffee",
+        img: "coffee.png",
       },
       {
         n: "Kehwa",
@@ -1593,6 +1611,8 @@ function updateLanguage() {
   document.querySelector(".hero-copy .subtitle").textContent = t.hero.subtitle;
   document.querySelector(".hero-copy .tag").textContent = t.hero.tag;
   document.querySelector(".hero-copy .cta-btn").textContent = t.hero.cta;
+  const copertoEl = document.querySelector(".hero-copy .coperto-text");
+  if (copertoEl) copertoEl.textContent = t.hero.coperto;
 
   // Update navbar links
   document.querySelectorAll(".navbar-links a").forEach((link, index) => {
@@ -1626,6 +1646,12 @@ function updateLanguage() {
 }
 
 function card(item, idx) {
+  if (item.subheading) {
+    return `<div style="grid-column: 1 / -1; text-align: center; margin: 20px 0 -10px;">
+      <span style="display:block; font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">&bull;</span>
+      <h3 style="font-size: clamp(1.3rem, 2.6vw, 1.8rem); font-weight: 600; margin: 0; color: var(--forest); font-family: 'Playfair Display', serif;">${item.n}</h3>
+    </div>`;
+  }
   const tone = idx % 2 === 0 ? "light" : "dark";
   const isKehwa =
     item.n === "Kehwa" ||
