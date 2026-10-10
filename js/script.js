@@ -13,7 +13,7 @@ const translations = {
       coperto: "Coperto €1.50",
     },
     nav: {
-      recentlyAdded: "Recently Added",
+      recentlyAdded: "Aggiunti di Recente",
       specialita: "Specialità",
       antipasti: "Antipasti",
       streetfood: "Street Food",
@@ -35,7 +35,7 @@ const translations = {
     },
     sec: {
       recentlyAdded: {
-        eyebrow: "Recently Added",
+        eyebrow: "Aggiunti di Recente",
         title: "Le nuove aggiunte più amate",
       },
       specialita: {
