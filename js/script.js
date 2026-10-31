@@ -370,14 +370,14 @@ const menuData = {
       {
         n: "Chicken Pakora",
         d: "Bocconcini di pollo marinati",
-        p: "6,90",
+        p: "7,90",
         i: "drumstick",
         img: "chicken pak.png",
       },
       {
         n: "Gamberi Pakora",
         d: "Gamberi in pastella speziata",
-        p: "6,90",
+        p: "7,90",
         i: "shrimp",
         spice: "🌶",
         img: "gam.png",
@@ -1004,14 +1004,14 @@ const menuData = {
       {
         n: "Chicken Pakora",
         d: "Marinated chicken bites",
-        p: "6.90",
+        p: "7.90",
         i: "drumstick",
         img: "chicken pak.png",
       },
       {
         n: "Shrimp Pakora",
         d: "Shrimp in spiced batter",
-        p: "6.90",
+        p: "7.90",
         i: "shrimp",
         spice: "🌶",
         img: "gam.png",
